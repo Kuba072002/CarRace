@@ -27,7 +27,6 @@ public class Race {
                 }
             }
             long endTime = System.currentTimeMillis();
-            System.out.println("Race finished! Total time: " + (endTime - startTime) + " ms");
         }).start();
     }
 }
