@@ -6,7 +6,8 @@ import java.util.Properties;
 
 public class RaceFrame extends JFrame {
 
-    private final Race race = new Race();
+    private final Race race = new RaceThreads();
+//    private final Race race = new RaceExecutor();
 
     public RaceFrame() {
         Properties properties = Utils.loadConfig();
