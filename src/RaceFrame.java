@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.FileInputStream;
@@ -13,16 +14,17 @@ public class RaceFrame extends JFrame {
         setTitle("PROB - Car Race Simulation - Threads & Runnable");
         setSize(1500, 1200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new GridLayout(0, 1));
+        setLayout(new BorderLayout());
 
         Image icon = Toolkit.getDefaultToolkit().getImage("images/icon.jpg");
         setIconImage(icon);
 
-        JPanel panel = new JPanel(new GridLayout(5, 1));
-        add(panel);
-
         Properties properties = loadConfig();
         int numberOfCars = Integer.parseInt(properties.getProperty("number_of_cars", "4"));
+
+        JPanel panel = new JPanel(new GridLayout(numberOfCars, 1, 10, 10));
+        panel.setBorder(new EmptyBorder(30, 30, 30, 30));
+        add(panel, BorderLayout.CENTER);
 
         setBackground(Color.decode(properties.getProperty("background.color", "GRAY")));
 
@@ -32,20 +34,27 @@ public class RaceFrame extends JFrame {
 
             JProgressBar progressBar = new JProgressBar();
             panel.add(progressBar);
-            Car car = new Car(name,colorName, progressBar);
+            Car car = new Car(name, colorName, progressBar);
             race.addCar(car);
         }
 
         JButton startButton = new JButton("Start Race");
-        startButton.setBackground(Color.decode(properties.getProperty("button.color", "GRAY")));
-        startButton.setForeground(Color.decode(properties.getProperty("text.color", "GRAY")));
-        Font currentFont = startButton.getFont();
-        startButton.setFont(new Font(currentFont.getName(), currentFont.getStyle(), 24));
+
+        startButton.setBackground(Color.decode(properties.getProperty("button.color", "#4CAF50")));
+        startButton.setForeground(Color.decode(properties.getProperty("text.color", "#FFFFFF")));
+        startButton.setFocusPainted(false);
+        startButton.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2, true));
+        startButton.setPreferredSize(new Dimension(200, 60));
+        startButton.setFont(new Font("Arial", Font.BOLD, 22));
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(startButton);
+
         startButton.addActionListener((ActionEvent e) -> {
             startButton.setEnabled(false);
             race.startRace();
         });
-        add(startButton);
+        add(buttonPanel, BorderLayout.SOUTH);
 
         setVisible(true);
     }
