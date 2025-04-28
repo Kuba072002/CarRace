@@ -4,17 +4,20 @@ import java.util.Random;
 
 public class Car implements Runnable {
     private final MapPanel mapPanel;
-    private static final int MAX_POSITION = 400;
-    private static final int SLEEP = 50;
+    private static final int MAX_POSITION = 600;
+    private static final int SLEEP = 30;
     private static final int MIN_DISTANCE = 1;
     private static final int MAX_DISTANCE = 4;
+    private static final int DNS_TRESHOLD = 3;
 
     private final JProgressBar progressBar;
     private final String carName;
+    private final int enginePower;
     private final Random random = new Random();
 
-    public Car(String carName, String colorName, JProgressBar progressBar, MapPanel mapPanel) {
+    public Car(String carName, String colorName, int enginePower, JProgressBar progressBar, MapPanel mapPanel) {
         this.carName = carName;
+        this.enginePower = enginePower;
         this.progressBar = progressBar;
         this.mapPanel = mapPanel;
         this.progressBar.setMaximum(MAX_POSITION);
@@ -36,7 +39,14 @@ public class Car implements Runnable {
                 Thread.currentThread().interrupt();
                 break;
             }
-            position += MIN_DISTANCE + random.nextInt(MAX_DISTANCE - MIN_DISTANCE);
+            position += MIN_DISTANCE + random.nextInt(MAX_DISTANCE - MIN_DISTANCE) + this.enginePower;
+
+            // boolean activateDns = random.nextInt(4) == DNS_TRESHOLD;
+
+            // if(activateDns){
+            //     position += this.enginePower;
+            // }
+
             final int currentPosition = position;
             SwingUtilities.invokeLater(() -> {
                 progressBar.setValue(currentPosition);

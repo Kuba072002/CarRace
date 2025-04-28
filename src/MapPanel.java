@@ -10,7 +10,7 @@ public class MapPanel extends JPanel {
     private static final int TRACK_HEIGHT = 250;
     private static final int LANE_SPACING = 15;
     private static final int TRACK_MARGIN = 30;
-    private static final int MAX_PROGRESS = 400;
+    private static final int MAX_PROGRESS = 600;
 
     public MapPanel() {
         this.cars = new ArrayList<>();

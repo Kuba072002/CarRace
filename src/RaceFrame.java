@@ -60,10 +60,11 @@ public class RaceFrame extends JFrame {
         for (int i = 1; i <= numberOfCars; i++) {
             String name = properties.getProperty("car." + i + ".name", "Car " + i);
             String colorName = properties.getProperty("car." + i + ".color", "GRAY");
-    
+            int enginePower = Integer.parseInt(properties.getProperty("car." + i + ".engine_power", "1"));
+
             JProgressBar progressBar = new JProgressBar();
             panel.add(progressBar);
-            Car car = new Car(name, colorName, progressBar, mapPanel);
+            Car car = new Car(name, colorName, enginePower, progressBar, mapPanel);
             mapPanel.addCar(car);
             race.addCar(car);
         }
