@@ -13,6 +13,12 @@ Projekt przedstawia praktyczne różnice pomiędzy zarządzaniem pojedynczymi w�
 
 ---
 
+## 🎥 Demo
+
+![car-race-demo](https://github.com/user-attachments/assets/367d756b-e40b-4936-99cf-aefa0832ceb7)
+
+---
+
 ## 🛠️ Opis działania programu
 
 Aplikacja jest graficzną symulacją wyścigu samochodowego, zbudowaną przy pomocy **Java Swing**.
