@@ -76,39 +76,40 @@ text.color=#F7F7F7
 
 - CPU time:
 
-![image](https://github.com/user-attachments/assets/9ad5b0d1-872f-4b9e-a68e-0b900e697014)
+![threadsCpu](https://github.com/user-attachments/assets/4c879c1b-d1d0-4f42-85ca-4c98b76df04f)
 
 - memory allocations:
 
-![image](https://github.com/user-attachments/assets/0ee89463-60c7-477d-9309-e24e3283da31)
+![threadsAllocations](https://github.com/user-attachments/assets/9b3e7b67-a839-4eaf-924b-7d050a40008f)
 
 - timeline:
 
-![image](https://github.com/user-attachments/assets/1cdf4fb2-5499-4775-b1aa-64580c317647)
+![threadsTimeline](https://github.com/user-attachments/assets/74f99210-5278-46d2-b2f8-80059809b41d)
 
 ### ExecutorService (fixedThreadPull)
 
 - CPU time:
 
-![image](https://github.com/user-attachments/assets/8e21c1fd-7b34-401b-a9ae-8ecc9e713cf7)
+![fixedCpu](https://github.com/user-attachments/assets/4126aad2-78b9-47fe-a93a-cceed0ba6ca6)
 
 - memory allocations:
 
-![image](https://github.com/user-attachments/assets/7cf3fa19-9c06-4146-95ec-8dd2a752a6b0)
+![fixedAllocations](https://github.com/user-attachments/assets/a08efd94-6727-46f9-894a-01e75ad3d7cd)
 
 - timeline:
 
-![image](https://github.com/user-attachments/assets/8dc2937c-a603-4606-84b3-3a0c194a02fc)
+![fixedTimeline](https://github.com/user-attachments/assets/21dcfa0f-70eb-4b3e-9b44-fd5f44eaafd5)
 
 ### ExecutorService (cachedThreadPull)
 
 - CPU time:
 
-![image](https://github.com/user-attachments/assets/6a3a5096-ac96-4231-9bcf-86c8a5e28733)
+![cachedCpu](https://github.com/user-attachments/assets/00b6449a-3132-48a0-be64-e480b044f086)
 
 - memory allocations:
 
-![image](https://github.com/user-attachments/assets/28f0a40a-174f-4503-9373-da620cf42a82)
+![cachedAllocations](https://github.com/user-attachments/assets/49cf8c88-1d25-4d30-aee8-b50b74fa9f78)
 
 - timeline:
-![image](https://github.com/user-attachments/assets/0d3f6662-2ab1-4e98-91da-369330d8c6c6)
+
+![cachedTimeline](https://github.com/user-attachments/assets/f6a73639-8fd1-46ee-ab55-6bf01039faec)
