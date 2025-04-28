@@ -7,7 +7,6 @@ public class RaceExecutor extends Race {
 
     @Override
     public void startRace() {
-        long startTime = System.currentTimeMillis();
         executor = Executors.newFixedThreadPool(cars.size());
 
         new Thread(() -> {

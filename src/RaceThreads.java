@@ -6,8 +6,6 @@ public class RaceThreads extends Race {
 
     @Override
     public void startRace() {
-        long startTime = System.currentTimeMillis();
-
         for (Car car : cars) {
             Thread thread = new Thread(car);
             threads.add(thread);
@@ -22,7 +20,6 @@ public class RaceThreads extends Race {
                     Thread.currentThread().interrupt();
                 }
             }
-            long endTime = System.currentTimeMillis();
         }).start();
     }
 }
